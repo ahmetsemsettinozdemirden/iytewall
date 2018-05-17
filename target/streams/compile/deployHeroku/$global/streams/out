@@ -1,0 +1,36 @@
+[0m[[0m[0mdebug[0m] [0m[0m+--------------------+[0m
+[0m[[0m[0mdebug[0m] [0m[0m| sbt-heroku details |[0m
+[0m[[0m[0mdebug[0m] [0m[0m+--------------------+-----------------------------------------------[0m
+[0m[[0m[0mdebug[0m] [0m[0m| baseDirectory -> /Users/alpay/Desktop/iytewall/backend [0m
+[0m[[0m[0mdebug[0m] [0m[0m| targetDir     -> /Users/alpay/Desktop/iytewall/backend/target [0m
+[0m[[0m[0mdebug[0m] [0m[0m| jdkVersion    -> 1.8 [0m
+[0m[[0m[0mdebug[0m] [0m[0m| jdkUrl        -> null [0m
+[0m[[0m[0mdebug[0m] [0m[0m| appName       -> ancient-ocean-48409 [0m
+[0m[[0m[0mdebug[0m] [0m[0m| stack         -> cedar-14 [0m
+[0m[[0m[0mdebug[0m] [0m[0m| includePaths  -> [0m
+[0m[[0m[0mdebug[0m] [0m[0m| buildpacks    -> [0m
+[0m[[0m[0mdebug[0m] [0m[0m+--------------------------------------------------------------------[0m
+[0m[[0m[0minfo[0m] [0m[0m-----> Packaging application...[0m
+[0m[[0m[0minfo[0m] [0m[0m       - app: ancient-ocean-48409[0m
+[0m[[0m[0minfo[0m] [0m[0m       - including: target/universal/stage/[0m
+[0m[[0m[0mdebug[0m] [0m[0mProcfile:[0m
+[0m[[0m[0mdebug[0m] [0m[0m===================[0m
+[0m[[0m[0mdebug[0m] [0m[0mweb: target/universal/stage/bin/iytewall -Dhttp.port=$PORT[0m
+[0m[[0m[0mdebug[0m] [0m[0mconsole: target/universal/stage/bin/iytewall -main scala.tools.nsc.MainGenericRunner -usejavacp[0m
+[0m[[0m[0mdebug[0m] [0m[0m[0m
+[0m[[0m[0mdebug[0m] [0m[0m===================[0m
+[0m[[0m[0mdebug[0m] [0m[0mHeroku existing config variables: [][0m
+[0m[[0m[0minfo[0m] [0m[0m-----> Creating build...[0m
+[0m[[0m[0minfo[0m] [0m[0m       - file: target/heroku/slug.tgz[0m
+[0m[[0m[0minfo[0m] [0m[0m       - size: 60MB[0m
+[0m[[0m[0mdebug[0m] [0m[0mHeroku Source response: {source_blob={get_url=https://s3-external-1.amazonaws.com/heroku-sources-production/d36267a4-b560-4681-ac74-a185d6a0a8fe?AWSAccessKeyId=AKIAJURUZ6XB34ESX54A&Signature=Zf42GPN0vnRZOc193MlxGD44h9E%3D&Expires=1526527398, put_url=https://s3-external-1.amazonaws.com/heroku-sources-production/d36267a4-b560-4681-ac74-a185d6a0a8fe?AWSAccessKeyId=AKIAJURUZ6XB34ESX54A&Signature=NkECq3kOhSwZ%2F50TFXrbaneeAy4%3D&Expires=1526527398}}[0m
+[0m[[0m[0mdebug[0m] [0m[0mHeroku Blob URL: https://s3-external-1.amazonaws.com/heroku-sources-production/d36267a4-b560-4681-ac74-a185d6a0a8fe?AWSAccessKeyId=AKIAJURUZ6XB34ESX54A&Signature=NkECq3kOhSwZ%2F50TFXrbaneeAy4%3D&Expires=1526527398[0m
+[0m[[0m[0minfo[0m] [0m[0m-----> Uploading build...[0m
+[0m[[0m[0minfo[0m] [0m[0m[A[2K[info] -----> Uploading slug... (1%)[0m
+[0m[[0m[0minfo[0m] [0m[0m[A[2K[info] -----> Uploading slug... (2%)[0m
+[0m[[0m[0minfo[0m] [0m[0m[A[2K[info] -----> Uploading slug... (3%)[0m
+[0m[[0m[0minfo[0m] [0m[0m[A[2K[info] -----> Uploading slug... (4%)[0m
+[0m[[0m[0minfo[0m] [0m[0m[A[2K[info] -----> Uploading slug... (5%)[0m
+[0m[[0m[0minfo[0m] [0m[0m[A[2K[info] -----> Uploading slug... (6%)[0m
+[0m[[0m[0minfo[0m] [0m[0m[A[2K[info] -----> Uploading slug... (7%)[0m
+[0m[[0m[0minfo[0m] [0m[0m[A[2K[info] -----> Uploading slug... (8%)[0m

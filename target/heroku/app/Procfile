@@ -1,0 +1,2 @@
+web: target/universal/stage/bin/iytewall -Dhttp.port=$PORT
+console: target/universal/stage/bin/iytewall -main scala.tools.nsc.MainGenericRunner -usejavacp

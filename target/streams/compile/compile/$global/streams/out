@@ -1,0 +1,4 @@
+[error] /Users/alpay/Desktop/iytewall/backend/app/controllers/api/ThreadController.java:127:1: cannot find symbol
+[error]   symbol:   method operateOnTempFile(java.io.File)
+[error]   location: class controllers.api.ThreadController
+[error]             Long data = operateOnTempFile(file);
