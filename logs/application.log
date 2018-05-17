@@ -13,3 +13,4 @@ This usually indicates the browser has a leftover cookie from another Play appli
 so clearing cookies may resolve this error message.
 2018-05-17 08:50:31,803 [DEBUG] from application in application-akka.actor.default-dispatcher-4 - user creating...
 2018-05-17 08:50:31,902 [DEBUG] from application in application-akka.actor.default-dispatcher-4 - A user with this email exists.
+2018-05-17 08:56:26,113 [WARN] from com.zaxxer.hikari.pool.HikariPool in HikariPool-1 housekeeper - HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m48s16ms).
