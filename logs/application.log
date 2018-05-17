@@ -32,3 +32,10 @@ so clearing cookies may resolve this error message.
 2018-05-17 05:41:47,667 [DEBUG] from application in application-akka.actor.default-dispatcher-32 - comment with id 7 vote incremented.
 2018-05-17 05:41:51,784 [DEBUG] from application in application-akka.actor.default-dispatcher-25 - comment with id 6 vote incremented.
 2018-05-17 05:41:53,116 [DEBUG] from application in application-akka.actor.default-dispatcher-32 - comment with id 6 vote incremented.
+2018-05-17 05:53:53,707 [DEBUG] from application in application-akka.actor.default-dispatcher-34 - user creating...
+2018-05-17 05:53:53,732 [DEBUG] from application in application-akka.actor.default-dispatcher-34 - user generated with id: 7
+2018-05-17 05:55:03,035 [DEBUG] from application in application-akka.actor.default-dispatcher-37 - comment with id 1 vote incremented.
+2018-05-17 05:55:12,125 [DEBUG] from application in application-akka.actor.default-dispatcher-36 - Thread with id 1 vote incremented.
+2018-05-17 05:55:14,753 [DEBUG] from application in application-akka.actor.default-dispatcher-37 - Thread with id 1 vote incremented.
+2018-05-17 06:01:42,262 [WARN] from play in application-akka.actor.default-dispatcher-51 - You are using status code '400' with flashing, which should only be used with a redirect status!
+2018-05-17 06:03:11,050 [DEBUG] from application in application-akka.actor.default-dispatcher-52 - Thread with id 6 vote incremented.
