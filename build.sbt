@@ -18,10 +18,8 @@ libraryDependencies += ws
 libraryDependencies += "com.h2database" % "h2" % "1.4.196"
 
 libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.1"
+
 libraryDependencies += "com.auth0" % "java-jwt" % "3.3.0"
 
-libraryDependencies += "org.postgresql" % "postgresql" % "9.4-1201-jdbc41"
-
-// Make verbose tests
-testOptions in Test := Seq(Tests.Argument(TestFrameworks.JUnit, "-a", "-v"))
+libraryDependencies += "org.postgresql" % "postgresql" % "42.2.1"
 
