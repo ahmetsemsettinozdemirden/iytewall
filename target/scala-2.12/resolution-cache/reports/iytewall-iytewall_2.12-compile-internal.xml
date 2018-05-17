@@ -7,16 +7,16 @@
 		revision="1.0"
 		conf="compile-internal"
 		confs="compile, runtime, test, provided, optional, universal, universal-docs, universal-src, windows, docker, linux, rpm, debian, compile-internal, runtime-internal, test-internal, plugin, pom, scala-tool, docs"
-		date="20180517052530"/>
+		date="20180517052933"/>
 	<dependencies>
 		<module organisation="org.postgresql" name="postgresql">
-			<revision name="42.2.1" status="release" pubdate="20180125184535" resolver="sbt-chain" artresolver="sbt-chain" homepage="https://github.com/pgjdbc/pgjdbc" downloaded="false" searched="false" default="false" conf="default, compile, runtime, default(compile), master" position="100">
-				<license name="BSD-2-Clause" url="https://jdbc.postgresql.org/about/license.html"/>
-				<metadata-artifact status="no" details="" size="6499" time="0" location="/Users/alpay/.ivy2/cache/org.postgresql/postgresql/ivy-42.2.1.xml" searched="false" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/postgresql/postgresql/42.2.1/postgresql-42.2.1.pom"/>
-				<caller organisation="iytewall" name="iytewall_2.12" conf="compile-internal, compile, provided, optional" rev="42.2.1" rev-constraint-default="42.2.1" rev-constraint-dynamic="42.2.1" callerrev="1.0"/>
+			<revision name="9.4-1201-jdbc41" status="release" pubdate="20150225181525" resolver="public" artresolver="public" homepage="http://jdbc.postgresql.org" downloaded="true" searched="true" default="false" conf="default, compile, runtime, default(compile), master" position="100">
+				<license name="The PostgreSQL License" url="http://www.postgresql.org/about/licence/"/>
+				<metadata-artifact status="successful" details="" size="2716" time="266" location="/Users/alpay/.ivy2/cache/org.postgresql/postgresql/ivy-9.4-1201-jdbc41.xml" searched="true" original-local-location="/Users/alpay/.ivy2/cache/org.postgresql/postgresql/ivy-9.4-1201-jdbc41.xml.original" origin-is-local="false" origin-location="https://repo1.maven.org/maven2/org/postgresql/postgresql/9.4-1201-jdbc41/postgresql-9.4-1201-jdbc41.pom"/>
+				<caller organisation="iytewall" name="iytewall_2.12" conf="compile-internal, compile, provided, optional" rev="9.4-1201-jdbc41" rev-constraint-default="9.4-1201-jdbc41" rev-constraint-dynamic="9.4-1201-jdbc41" callerrev="1.0"/>
 				<artifacts>
-					<artifact name="postgresql" type="bundle" ext="jar" status="no" details="" size="794639" time="0" location="/Users/alpay/.ivy2/cache/org.postgresql/postgresql/bundles/postgresql-42.2.1.jar">
-						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/postgresql/postgresql/42.2.1/postgresql-42.2.1.jar"/>
+					<artifact name="postgresql" type="jar" ext="jar" status="successful" details="" size="648487" time="664" location="/Users/alpay/.ivy2/cache/org.postgresql/postgresql/jars/postgresql-9.4-1201-jdbc41.jar">
+						<origin-location is-local="false" location="https://repo1.maven.org/maven2/org/postgresql/postgresql/9.4-1201-jdbc41/postgresql-9.4-1201-jdbc41.jar"/>
 					</artifact>
 				</artifacts>
 			</revision>

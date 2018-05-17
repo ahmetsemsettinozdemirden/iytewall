@@ -4,7 +4,7 @@
 		module="iytewall_2.12"
 		revision="1.0"
 		status="integration"
-		publication="20180517052530"
+		publication="20180517052933"
 	>
 		<description>
 		iytewall
@@ -57,6 +57,6 @@
 		<dependency org="com.h2database" name="h2" rev="1.4.196" conf="compile->default(compile)"/>
 		<dependency org="org.scalatest" name="scalatest_2.12" rev="3.0.1" conf="compile->default(compile)"/>
 		<dependency org="com.auth0" name="java-jwt" rev="3.3.0" conf="compile->default(compile)"/>
-		<dependency org="org.postgresql" name="postgresql" rev="42.2.1" conf="compile->default(compile)"/>
+		<dependency org="org.postgresql" name="postgresql" rev="9.4-1201-jdbc41" conf="compile->default(compile)"/>
 	</dependencies>
 </ivy-module>
