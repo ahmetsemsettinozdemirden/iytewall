@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/alpay/Desktop/iytewall/backend/conf/routes
-// @DATE:Thu May 17 02:19:35 EET 2018
+// @DATE:Wed May 23 21:10:09 EET 2018
 
 package router
 
@@ -20,9 +20,9 @@ class Routes(
   UserController_0: controllers.api.UserController,
   // @LINE:20
   ThreadController_1: controllers.api.ThreadController,
-  // @LINE:35
+  // @LINE:37
   CommentController_3: controllers.api.CommentController,
-  // @LINE:45
+  // @LINE:47
   Assets_4: controllers.Assets,
   val prefix: String
 ) extends GeneratedRouter {
@@ -35,9 +35,9 @@ class Routes(
     UserController_0: controllers.api.UserController,
     // @LINE:20
     ThreadController_1: controllers.api.ThreadController,
-    // @LINE:35
+    // @LINE:37
     CommentController_3: controllers.api.CommentController,
-    // @LINE:45
+    // @LINE:47
     Assets_4: controllers.Assets
   ) = this(errorHandler, HomeController_2, UserController_0, ThreadController_1, CommentController_3, Assets_4, "/")
 
@@ -60,6 +60,7 @@ class Routes(
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """thread""", """controllers.api.ThreadController.fetchAll"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """thread/""" + "$" + """id<[^/]+>""", """controllers.api.ThreadController.fetch(id:Long)"""),
     ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """thread""", """controllers.api.ThreadController.create"""),
+    ("""POST""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """thread/upload""", """controllers.api.ThreadController.uploadImage"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """thread/vote/""" + "$" + """id<[^/]+>/""" + "$" + """vote<[^/]+>""", """controllers.api.ThreadController.vote(id:Long, vote:Boolean)"""),
     ("""DELETE""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """thread/""" + "$" + """id<[^/]+>""", """controllers.api.ThreadController.delete(id:Long)"""),
     ("""GET""", this.prefix + (if(this.prefix.endsWith("/")) "" else "/") + """comment/""" + "$" + """threadId<[^/]+>""", """controllers.api.CommentController.fetch(threadId:Long)"""),
@@ -237,10 +238,28 @@ class Routes(
   )
 
   // @LINE:26
-  private[this] lazy val controllers_api_ThreadController_vote9_route = Route("GET",
+  private[this] lazy val controllers_api_ThreadController_uploadImage9_route = Route("POST",
+    PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("thread/upload")))
+  )
+  private[this] lazy val controllers_api_ThreadController_uploadImage9_invoker = createInvoker(
+    ThreadController_1.uploadImage,
+    play.api.routing.HandlerDef(this.getClass.getClassLoader,
+      "router",
+      "controllers.api.ThreadController",
+      "uploadImage",
+      Nil,
+      "POST",
+      this.prefix + """thread/upload""",
+      """""",
+      Seq("""userFilter""")
+    )
+  )
+
+  // @LINE:28
+  private[this] lazy val controllers_api_ThreadController_vote10_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("thread/vote/"), DynamicPart("id", """[^/]+""",true), StaticPart("/"), DynamicPart("vote", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_api_ThreadController_vote9_invoker = createInvoker(
+  private[this] lazy val controllers_api_ThreadController_vote10_invoker = createInvoker(
     ThreadController_1.vote(fakeValue[Long], fakeValue[Boolean]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -254,11 +273,11 @@ class Routes(
     )
   )
 
-  // @LINE:28
-  private[this] lazy val controllers_api_ThreadController_delete10_route = Route("DELETE",
+  // @LINE:30
+  private[this] lazy val controllers_api_ThreadController_delete11_route = Route("DELETE",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("thread/"), DynamicPart("id", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_api_ThreadController_delete10_invoker = createInvoker(
+  private[this] lazy val controllers_api_ThreadController_delete11_invoker = createInvoker(
     ThreadController_1.delete(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -272,11 +291,11 @@ class Routes(
     )
   )
 
-  // @LINE:35
-  private[this] lazy val controllers_api_CommentController_fetch11_route = Route("GET",
+  // @LINE:37
+  private[this] lazy val controllers_api_CommentController_fetch12_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("comment/"), DynamicPart("threadId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_api_CommentController_fetch11_invoker = createInvoker(
+  private[this] lazy val controllers_api_CommentController_fetch12_invoker = createInvoker(
     CommentController_3.fetch(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -290,11 +309,11 @@ class Routes(
     )
   )
 
-  // @LINE:37
-  private[this] lazy val controllers_api_CommentController_create12_route = Route("POST",
+  // @LINE:39
+  private[this] lazy val controllers_api_CommentController_create13_route = Route("POST",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("comment/"), DynamicPart("threadId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_api_CommentController_create12_invoker = createInvoker(
+  private[this] lazy val controllers_api_CommentController_create13_invoker = createInvoker(
     CommentController_3.create(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -308,11 +327,11 @@ class Routes(
     )
   )
 
-  // @LINE:39
-  private[this] lazy val controllers_api_CommentController_delete13_route = Route("DELETE",
+  // @LINE:41
+  private[this] lazy val controllers_api_CommentController_delete14_route = Route("DELETE",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("comment/"), DynamicPart("commentId", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_api_CommentController_delete13_invoker = createInvoker(
+  private[this] lazy val controllers_api_CommentController_delete14_invoker = createInvoker(
     CommentController_3.delete(fakeValue[Long]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -326,11 +345,11 @@ class Routes(
     )
   )
 
-  // @LINE:41
-  private[this] lazy val controllers_api_CommentController_vote14_route = Route("GET",
+  // @LINE:43
+  private[this] lazy val controllers_api_CommentController_vote15_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("comment/vote/"), DynamicPart("id", """[^/]+""",true), StaticPart("/"), DynamicPart("vote", """[^/]+""",true)))
   )
-  private[this] lazy val controllers_api_CommentController_vote14_invoker = createInvoker(
+  private[this] lazy val controllers_api_CommentController_vote15_invoker = createInvoker(
     CommentController_3.vote(fakeValue[Long], fakeValue[Boolean]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -344,11 +363,11 @@ class Routes(
     )
   )
 
-  // @LINE:45
-  private[this] lazy val controllers_Assets_versioned15_route = Route("GET",
+  // @LINE:47
+  private[this] lazy val controllers_Assets_versioned16_route = Route("GET",
     PathPattern(List(StaticPart(this.prefix), StaticPart(this.defaultPrefix), StaticPart("assets/"), DynamicPart("file", """.+""",false)))
   )
-  private[this] lazy val controllers_Assets_versioned15_invoker = createInvoker(
+  private[this] lazy val controllers_Assets_versioned16_invoker = createInvoker(
     Assets_4.versioned(fakeValue[String], fakeValue[Asset]),
     play.api.routing.HandlerDef(this.getClass.getClassLoader,
       "router",
@@ -420,45 +439,51 @@ class Routes(
       }
   
     // @LINE:26
-    case controllers_api_ThreadController_vote9_route(params@_) =>
-      call(params.fromPath[Long]("id", None), params.fromPath[Boolean]("vote", None)) { (id, vote) =>
-        controllers_api_ThreadController_vote9_invoker.call(ThreadController_1.vote(id, vote))
+    case controllers_api_ThreadController_uploadImage9_route(params@_) =>
+      call { 
+        controllers_api_ThreadController_uploadImage9_invoker.call(ThreadController_1.uploadImage)
       }
   
     // @LINE:28
-    case controllers_api_ThreadController_delete10_route(params@_) =>
-      call(params.fromPath[Long]("id", None)) { (id) =>
-        controllers_api_ThreadController_delete10_invoker.call(ThreadController_1.delete(id))
+    case controllers_api_ThreadController_vote10_route(params@_) =>
+      call(params.fromPath[Long]("id", None), params.fromPath[Boolean]("vote", None)) { (id, vote) =>
+        controllers_api_ThreadController_vote10_invoker.call(ThreadController_1.vote(id, vote))
       }
   
-    // @LINE:35
-    case controllers_api_CommentController_fetch11_route(params@_) =>
-      call(params.fromPath[Long]("threadId", None)) { (threadId) =>
-        controllers_api_CommentController_fetch11_invoker.call(CommentController_3.fetch(threadId))
+    // @LINE:30
+    case controllers_api_ThreadController_delete11_route(params@_) =>
+      call(params.fromPath[Long]("id", None)) { (id) =>
+        controllers_api_ThreadController_delete11_invoker.call(ThreadController_1.delete(id))
       }
   
     // @LINE:37
-    case controllers_api_CommentController_create12_route(params@_) =>
+    case controllers_api_CommentController_fetch12_route(params@_) =>
       call(params.fromPath[Long]("threadId", None)) { (threadId) =>
-        controllers_api_CommentController_create12_invoker.call(CommentController_3.create(threadId))
+        controllers_api_CommentController_fetch12_invoker.call(CommentController_3.fetch(threadId))
       }
   
     // @LINE:39
-    case controllers_api_CommentController_delete13_route(params@_) =>
-      call(params.fromPath[Long]("commentId", None)) { (commentId) =>
-        controllers_api_CommentController_delete13_invoker.call(CommentController_3.delete(commentId))
+    case controllers_api_CommentController_create13_route(params@_) =>
+      call(params.fromPath[Long]("threadId", None)) { (threadId) =>
+        controllers_api_CommentController_create13_invoker.call(CommentController_3.create(threadId))
       }
   
     // @LINE:41
-    case controllers_api_CommentController_vote14_route(params@_) =>
-      call(params.fromPath[Long]("id", None), params.fromPath[Boolean]("vote", None)) { (id, vote) =>
-        controllers_api_CommentController_vote14_invoker.call(CommentController_3.vote(id, vote))
+    case controllers_api_CommentController_delete14_route(params@_) =>
+      call(params.fromPath[Long]("commentId", None)) { (commentId) =>
+        controllers_api_CommentController_delete14_invoker.call(CommentController_3.delete(commentId))
       }
   
-    // @LINE:45
-    case controllers_Assets_versioned15_route(params@_) =>
+    // @LINE:43
+    case controllers_api_CommentController_vote15_route(params@_) =>
+      call(params.fromPath[Long]("id", None), params.fromPath[Boolean]("vote", None)) { (id, vote) =>
+        controllers_api_CommentController_vote15_invoker.call(CommentController_3.vote(id, vote))
+      }
+  
+    // @LINE:47
+    case controllers_Assets_versioned16_route(params@_) =>
       call(Param[String]("path", Right("/public")), params.fromPath[Asset]("file", None)) { (path, file) =>
-        controllers_Assets_versioned15_invoker.call(Assets_4.versioned(path, file))
+        controllers_Assets_versioned16_invoker.call(Assets_4.versioned(path, file))
       }
   }
 }

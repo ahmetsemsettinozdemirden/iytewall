@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/alpay/Desktop/iytewall/backend/conf/routes
-// @DATE:Thu May 17 02:19:35 EET 2018
+// @DATE:Wed May 23 21:10:09 EET 2018
 
 
 package router {

@@ -4,15 +4,15 @@ import io.ebean.Finder;
 import io.ebean.Model;
 import io.ebean.annotation.CreatedTimestamp;
 import io.ebean.annotation.NotNull;
-import models.Comment.Comment;
-import models.User.User;
+import models.Utils.Image;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import java.io.File;
 import java.util.Date;
-import java.util.List;
 
 @Entity
 @Table(name="threads")
@@ -39,11 +39,12 @@ public class Thread extends Model {
 	@CreatedTimestamp
 	private Date createdDate;
 
-	private File image;
+	@OneToOne(cascade = CascadeType.PERSIST)
+	private Image image;
 
 	public static final Finder<Long, Thread> find = new Finder<>(Thread.class);
 
-	public Thread(Long userId, File image, String title, String msg){
+	public Thread(Long userId, Image image, String title, String msg){
 		this.userId = userId;
 		this.image = image;
 		this.title = title;
@@ -84,11 +85,11 @@ public class Thread extends Model {
 		this.msg = msg;
 	}
 
-	public File getImage() {
+	public Image getImage() {
 		return image;
 	}
 
-	public void setImage(File image) {
+	public void setImage(Image image) {
 		this.image = image;
 	}
 

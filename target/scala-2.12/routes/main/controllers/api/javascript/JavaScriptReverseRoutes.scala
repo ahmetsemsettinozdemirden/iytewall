@@ -1,6 +1,6 @@
 // @GENERATOR:play-routes-compiler
 // @SOURCE:/Users/alpay/Desktop/iytewall/backend/conf/routes
-// @DATE:Thu May 17 02:19:35 EET 2018
+// @DATE:Wed May 23 21:10:09 EET 2018
 
 import play.api.routing.JavaScriptReverseRoute
 
@@ -11,7 +11,7 @@ import _root_.play.libs.F
 // @LINE:10
 package controllers.api.javascript {
 
-  // @LINE:35
+  // @LINE:37
   class ReverseCommentController(_prefix: => String) {
 
     def _defaultPrefix: String = {
@@ -19,7 +19,7 @@ package controllers.api.javascript {
     }
 
   
-    // @LINE:37
+    // @LINE:39
     def create: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.api.CommentController.create",
       """
@@ -29,7 +29,7 @@ package controllers.api.javascript {
       """
     )
   
-    // @LINE:41
+    // @LINE:43
     def vote: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.api.CommentController.vote",
       """
@@ -39,7 +39,7 @@ package controllers.api.javascript {
       """
     )
   
-    // @LINE:39
+    // @LINE:41
     def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.api.CommentController.delete",
       """
@@ -49,7 +49,7 @@ package controllers.api.javascript {
       """
     )
   
-    // @LINE:35
+    // @LINE:37
     def fetch: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.api.CommentController.fetch",
       """
@@ -129,7 +129,7 @@ package controllers.api.javascript {
     }
 
   
-    // @LINE:28
+    // @LINE:30
     def delete: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.api.ThreadController.delete",
       """
@@ -170,6 +170,16 @@ package controllers.api.javascript {
     )
   
     // @LINE:26
+    def uploadImage: JavaScriptReverseRoute = JavaScriptReverseRoute(
+      "controllers.api.ThreadController.uploadImage",
+      """
+        function() {
+          return _wA({method:"POST", url:"""" + _prefix + { _defaultPrefix } + """" + "thread/upload"})
+        }
+      """
+    )
+  
+    // @LINE:28
     def vote: JavaScriptReverseRoute = JavaScriptReverseRoute(
       "controllers.api.ThreadController.vote",
       """

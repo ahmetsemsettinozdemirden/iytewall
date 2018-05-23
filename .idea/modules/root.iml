@@ -23,7 +23,6 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="sbt: aopalliance:aopalliance:1.0:jar" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="sbt: org.scala-lang:scala-compiler:2.12.4:jar" level="project" />
     <orderEntry type="library" name="sbt: tyrex:tyrex:1.0.1:jar" level="project" />
     <orderEntry type="library" name="sbt: org.scalatest:scalatest_2.12:3.0.1:jar" level="project" />
     <orderEntry type="library" name="sbt: org.scalactic:scalactic_2.12:3.0.1:jar" level="project" />
@@ -162,6 +161,6 @@
     <orderEntry type="library" name="sbt: org.avaje:avaje-datasource:2.1.1:jar" level="project" />
     <orderEntry type="library" name="sbt: org.avaje:avaje-datasource-api:1.1:jar" level="project" />
     <orderEntry type="library" name="sbt: org.jetbrains:annotations:13.0:jar" level="project" />
-    <orderEntry type="library" name="sbt: org.postgresql:postgresql:9.4-1201-jdbc41:jar" level="project" />
+    <orderEntry type="library" name="sbt: org.postgresql:postgresql:42.2.1:jar" level="project" />
   </component>
 </module>

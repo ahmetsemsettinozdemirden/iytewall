@@ -1,4 +1,2 @@
-[error] /Users/alpay/Desktop/iytewall/backend/app/controllers/api/ThreadController.java:127:1: cannot find symbol
-[error]   symbol:   method operateOnTempFile(java.io.File)
-[error]   location: class controllers.api.ThreadController
-[error]             Long data = operateOnTempFile(file);
+[error] /Users/alpay/Desktop/iytewall/backend/app/controllers/api/ThreadController.java:150:1: unreported exception java.io.UnsupportedEncodingException; must be caught or declared to be thrown
+[error] 		result.replace("image", createImageNode(thread.getImage()));

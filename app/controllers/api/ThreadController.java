@@ -5,12 +5,14 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import controllers.forms.ThreadCreateForm;
+import controllers.forms.UploadImageForm;
 import jwt.JwtHelper;
 import jwt.VerifiedJwt;
 import jwt.filter.Attrs;
 import models.Thread.Thread;
 import models.Thread.ThreadGenerator;
 import models.User.User;
+import models.Utils.Image;
 import play.Logger;
 import play.data.Form;
 import play.data.FormFactory;
@@ -19,6 +21,7 @@ import play.mvc.BodyParser;
 import play.mvc.Controller;
 import play.mvc.Http;
 import play.mvc.Result;
+import views.html.index;
 
 import java.io.File;
 import java.io.IOException;
@@ -107,7 +110,7 @@ public class ThreadController extends Controller {
     }
 
     @BodyParser.Of(BodyParser.MultipartFormData.class)
-    public Result create() throws IOException {
+    public Result create() {
 
         VerifiedJwt verifiedJwt = request().attrs().get(Attrs.VERIFIED_JWT);
 
@@ -116,39 +119,48 @@ public class ThreadController extends Controller {
         if(user == null)
             return badRequest("user does not exist.");
 
-        Http.MultipartFormData<File> body = request().body().asMultipartFormData();
-        Http.MultipartFormData.FilePart<File> picture = body.getFile("image");
-        String title = body.asFormUrlEncoded().get("title")[0];
-        String msg = body.asFormUrlEncoded().get("msg")[0];
+		Form<ThreadCreateForm> form = formFactory.form(ThreadCreateForm.class).bind(request().body().asJson());
 
-        if (picture != null) {
-            String fileName = picture.getFilename();
-            String contentType = picture.getContentType();
-            File file = picture.getFile();
+		if(form.hasErrors())
+			return badRequest(form.errorsAsJson());
 
-            Logger.debug(fileName + contentType +  file);
+		ThreadCreateForm threadCreateForm = form.get();
 
-            Logger.debug("thread creating...");
-            Thread thread;
+		Logger.debug("thread creating...");
 
-            try {
-                thread = threadGenerator.generate(user.getId(), file, title, msg);
-                Logger.debug("thread generated with id: " + user.getId());
-            } catch (UnsupportedEncodingException e){
-                return badRequest("Encoding error: " + e.getMessage());
-            }
+		Thread thread;
 
-            ObjectNode result = (ObjectNode) Json.toJson(thread);
-            result.remove("userId");
-            result.replace("user", createUserNode(thread));
-            return ok(result);
+		try{
 
-        } else {
-            flash("error", "Missing file");
-            return badRequest();
-        }
+			Image image = new Image(form.get().image.getFilename(), (File) form.get().image.getFile());
 
-    }
+			thread = threadGenerator.generate(user.getId(), image, form.get().title, form.get().msg);
+
+			Logger.debug("thread generated with id: " + thread.getId());
+
+		} catch (UnsupportedEncodingException e){
+			return badRequest("Encoding error: " + e.getMessage());
+		}
+
+		ObjectNode result = (ObjectNode) Json.toJson(thread);
+		result.remove("userId");
+		result.replace("user", createUserNode(thread));
+
+		return ok(result);
+	}
+
+	public Result uploadImage(){
+		Form<UploadImageForm> form = formFactory.form(UploadImageForm.class).bind(request().body().asJson());
+
+		if (form.hasErrors()) {
+			return badRequest("gg bro");
+
+		} else {
+			Image image = new Image(form.get().image.getFilename(), (File) form.get().image.getFile());
+
+			return ok(Json.toJson(image));
+		}
+	}
 
     public Result vote(Long id, Boolean vote) {
 

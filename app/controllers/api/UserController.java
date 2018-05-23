@@ -1,8 +1,8 @@
 package controllers.api;
 
 import com.fasterxml.jackson.databind.node.ArrayNode;
-import com.google.inject.Inject;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import controllers.forms.SignInUserForm;
 import controllers.forms.SignUpUserForm;

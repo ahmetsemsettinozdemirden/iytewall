@@ -23,6 +23,8 @@ GET         /thread/:id             controllers.api.ThreadController.fetch(id: L
 + userFilter
 POST        /thread                 controllers.api.ThreadController.create
 + userFilter
+POST        /thread/upload          controllers.api.ThreadController.uploadImage
++ userFilter
 GET         /thread/vote/:id/:vote  controllers.api.ThreadController.vote(id: Long, vote: Boolean)
 + userFilter
 DELETE      /thread/:id             controllers.api.ThreadController.delete(id: Long)
