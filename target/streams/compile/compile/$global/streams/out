@@ -1,2 +1,2 @@
-[error] /Users/alpay/Desktop/iytewall/backend/app/controllers/api/ThreadController.java:150:1: unreported exception java.io.UnsupportedEncodingException; must be caught or declared to be thrown
-[error] 		result.replace("image", createImageNode(thread.getImage()));
+[info] /Users/alpay/Desktop/iytewall/backend/app/controllers/forms/ThreadCreateForm.java: /Users/alpay/Desktop/iytewall/backend/app/controllers/forms/ThreadCreateForm.java uses unchecked or unsafe operations.
+[info] /Users/alpay/Desktop/iytewall/backend/app/controllers/forms/ThreadCreateForm.java: Recompile with -Xlint:unchecked for details.

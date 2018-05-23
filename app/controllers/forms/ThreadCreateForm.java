@@ -1,6 +1,5 @@
 package controllers.forms;
 
-import play.data.validation.Constraints.Required;
 import play.mvc.Http;
 import play.mvc.Http.MultipartFormData.FilePart;
 

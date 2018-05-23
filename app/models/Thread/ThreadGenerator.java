@@ -2,7 +2,6 @@ package models.Thread;
 
 import models.Utils.Image;
 
-import java.io.File;
 import java.io.UnsupportedEncodingException;
 
 public interface ThreadGenerator {

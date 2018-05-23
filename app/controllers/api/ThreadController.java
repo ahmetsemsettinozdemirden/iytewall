@@ -19,12 +19,9 @@ import play.data.FormFactory;
 import play.libs.Json;
 import play.mvc.BodyParser;
 import play.mvc.Controller;
-import play.mvc.Http;
 import play.mvc.Result;
-import views.html.index;
 
 import java.io.File;
-import java.io.IOException;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
@@ -52,7 +49,9 @@ public class ThreadController extends Controller {
         if(user == null)
             return badRequest("user does not exist.");
 
-        List<Thread> threads = Thread.find.all();
+        List<Thread> threads = Thread.find.query()
+				.orderBy("createdDate desc")
+				.findList();
         // TODO : add order by vote
         ArrayNode result = Json.newArray();
 

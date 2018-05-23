@@ -50,6 +50,7 @@ public class CommentController extends Controller {
         List<Comment> comments = Comment.find.query()
         .where()
         .eq("threadId", threadId)
+        .orderBy("voteCount desc")
         .findList();
 
         ArrayNode res = Json.newArray();
